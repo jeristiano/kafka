@@ -1,0 +1,993 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>mysql_3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: "΢���ź�"��Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>mysql高级</h1>
+
+<h2>多表查询</h2>
+
+<h3>内链接 （使用最多的一种）<code>inner join</code></h3>
+
+<p>内链接查询是mysql中的多表连接中一种。</p>
+
+<p>思路为将其中两个表的匹配结果再和第三个表进行匹配，可以节省匹配次数和提高检索速度。</p>
+
+<pre><code>INNER JOIN 表名 ON 筛选条件
+</code></pre>
+
+<p><img src="http://www.runoob.com/wp-content/uploads/2014/03/img_innerjoin.gif" alt="" /></p>
+
+<p><strong>注意：</strong>内链接只保留复合“筛选条件”的记录</p>
+
+<p><strong>查询出考试的学生的所有的信息</strong></p>
+
+<pre><code>SELECT
+    *
+FROM
+    students s
+INNER JOIN classes c ON s.cid = c.cid
+INNER JOIN marks m ON m.sid = s.sid;
+</code></pre>
+
+<p><strong>统计每个班级各科成绩的平均分、最高分、最低分、总分</strong></p>
+
+<pre><code>SELECT
+    c.cname 班级,
+    avg(m.chinese) 语文（平均）,
+    max(m.chinese) 语文（最高）,
+    min(m.chinese) 语文（最低）,
+    sum(m.chinese) 语文（总分）,
+    avg(m.math) 语文（平均）,
+    max(m.math) 数学（最高）,
+    min(m.math) 数学（最低）,
+    sum(m.math) 数学（总分）,
+    avg(m.english) 英语（平均）,
+    max(m.english) 英语（最高）,
+    min(m.english) 英语（最低）,
+    sum(m.english) 英语（总分）
+FROM
+    students s
+INNER JOIN classes c ON s.cid = c.cid
+INNER JOIN marks m ON m.sid = s.sid
+GROUP BY
+    c.cname;
+</code></pre>
+
+<p><strong>统计每个学生的总分，并查询总分大于250分的学生信息</strong></p>
+
+<pre><code>SELECT
+    s.sname 姓名,
+    s.age 年龄,
+    c.cname 班级,
+    m.chinese + m.english + m.math 总分
+FROM
+    students s
+INNER JOIN classes c ON s.cid = c.cid
+INNER JOIN marks m ON m.sid = s.sid
+WHERE
+    m.chinese + m.english + m.math &gt; 250;
+</code></pre>
+
+<h3>外连接（完全保留某一张表的记录的时候）</h3>
+
+<p>在某些情况下，需要以A表为参照物，到B去匹配数据,如果A表中的数据在B中匹配到数据，那么就在查询出来的结果中显示出来，否则B表对应的数据用null填充</p>
+
+<p><strong>左外连接</strong></p>
+
+<p>以左边表为参照物 到右边表匹配</p>
+
+<pre><code>LEFT JOIN 表名 ON 筛选条件
+</code></pre>
+
+<p><img src="http://www.runoob.com/wp-content/uploads/2014/03/img_leftjoin.gif" alt="" /></p>
+
+<pre><code>SELECT
+    *
+FROM
+    students s
+LEFT JOIN classes c ON s.cid = c.cid
+</code></pre>
+
+<h3>右外连接</h3>
+
+<p>以右边表为参照物 到左边表匹配</p>
+
+<pre><code>RIGHT JOIN 表名 ON 筛选条件
+</code></pre>
+
+<p><img src="http://www.runoob.com/wp-content/uploads/2014/03/img_rightjoin.gif" alt="" /></p>
+
+<pre><code>SELECT
+    *
+FROM
+    students s
+RIGHT JOIN classes c ON s.cid = c.cid
+</code></pre>
+
+<h3>自查询</h3>
+
+<p>把自身作为第二张表链接后查询。</p>
+
+<pre><code>A表 a JOIN A表 a ON 筛选条件
+</code></pre>
+
+<p>-</p>
+
+<pre><code>SELECT
+    *
+FROM
+    students s1 JOIN students s2 ON s1.lid = s2.sid
+</code></pre>
+
+<h3>多表查询</h3>
+
+<pre><code>SELECT
+    *
+FROM
+    students s,
+    classes c,
+    marks m
+WHERE
+    s.cid = c.cid &amp;&amp; s.sid = m.sid
+</code></pre>
+
+<h3>临时表</h3>
+
+<p>from 后链接子查询（临时表）</p>
+
+<pre><code>SELECT * from (SELECT * from students s 
+JOIN sexs x on s.sex=x.xid) sx
+where sx.age&gt;100
+</code></pre>
+
+<p>等同：</p>
+
+<pre><code>SELECT * from students s 
+JOIN sexs x on s.sex=x.xid
+where s.age&gt;100
+</code></pre>
+
+<h3>嵌套查询</h3>
+
+<p>主查询的查询条件是由子查询提供。</p>
+
+<p>查询中记录条数比较多，而查询出的有效记录比较少时，这个时候使用 嵌套查询，可以节省匹配次数。</p>
+
+<pre><code>SELECT
+*
+FROM
+    students s1
+JOIN students s2 ON s1.lid = s2.sid
+WHERE
+    s1.sid IN (
+        SELECT
+            sid
+        FROM
+            marks
+        WHERE
+            english &lt; 70
+    )
+</code></pre>
+
+<h3>子查询中的关键字</h3>
+
+<p><strong>all</strong></p>
+
+<pre><code>&gt;all 大于查中的最大值
+&lt;all 小于查询中的最小值
+=all 等于查询中所有值
+</code></pre>
+
+<p>例子</p>
+
+<pre><code>SELECT
+    s.sname,
+    m.chinese
+FROM
+    students s
+JOIN marks m ON m.sid = s.sid
+WHERE
+    s.cid = 1 &amp;&amp; m.chinese &lt; All (
+        SELECT
+            m.chinese
+        FROM
+            students s
+        JOIN marks m ON m.sid = s.sid
+        WHERE
+            s.cid = 2
+    )
+</code></pre>
+
+<p><strong>any</strong></p>
+
+<pre><code>&gt;any 大于查询中的最小值
+&lt;any 小于查询中的最大值
+=any 等于查询中任意值 in
+</code></pre>
+
+<p>去除最大值和最小值</p>
+
+<pre><code>SELECT
+    s.sname,
+    m.chinese
+FROM
+    students s
+JOIN marks m ON m.sid = s.sid
+WHERE
+    s.cid = 1 &amp;&amp; m.chinese &lt; ANY (
+        SELECT
+            m.chinese
+        FROM
+            students s
+        JOIN marks m ON m.sid = s.sid
+        WHERE
+            s.cid = 1
+    ) &amp;&amp; m.chinese &gt; ANY (
+        SELECT
+            m.chinese
+        FROM
+            students s
+        JOIN marks m ON m.sid = s.sid
+        WHERE
+            s.cid = 1
+    )
+</code></pre>
+
+<p><strong>exits</strong></p>
+
+<p>子查询中记录是否存在，如果有记录返回，主查询中的记录就符合条件，否则就不符合条件</p>
+
+<pre><code>SELECT
+    *
+FROM
+    students s
+WHERE
+    EXISTS (
+        SELECT
+            *
+        FROM
+            sexs x
+        WHERE
+            x.xid IN (1, 2) &amp;&amp; x.xid = s.sex
+    )
+</code></pre>
+
+<p>等同</p>
+
+<pre><code>select * from students s where s.sex in (1,2)
+</code></pre>
+
+<h3>复制表结构</h3>
+
+<pre><code>Create table tb2 like tb1;
+</code></pre>
+
+<h3>复制表的数据</h3>
+
+<p>将表tb1中的所有数据全部都放到tb2表中去</p>
+
+<pre><code>Insert into tb2 select * from tb1; 
+
+insert into sexs2 select * from sexs;
+</code></pre>
+
+<p>将表tb1 中的部分查出的列 放到表tb2的某些列中</p>
+
+<pre><code>Insert into tb2(column list) select column list from tb1;
+
+insert into students2 (sname) select sname from students;
+</code></pre>
+
+<p>将表tb1 中根据条件查询出的部分数据  放到表tb2中</p>
+
+<pre><code>Insert into tb2(column list) select column list from tb1 where uid&gt;100;
+
+insert into students2 select * from students where age&gt;100;
+</code></pre>
+
+<h2>索引（index）</h2>
+
+<p>索引，可以理解为是表记录的目录</p>
+
+<h3>索引介绍</h3>
+
+<p>索引在数据库开发中起着非常重要的作用，通过在表字段中建立索引可以优化查询，确保数据的唯一性，并且可以对任何全文索引字段中大量文本的搜索进行优化。</p>
+
+<p>在Mysql中主要有4类索引：</p>
+
+<ol>
+<li>主键索引（primary key）</li>
+<li>唯一索引（unique）</li>
+<li>常规索引（index）</li>
+<li>全文索引（fulltext）</li>
+</ol>
+
+<p>索引是建立在表中的字段上的（索引文件）</p>
+
+<p>一个表对应三个文件</p>
+
+<pre><code>stu_info.frm    表的结构
+stu_info.MYD    数据文件
+stu_info.MYI    索引文件 
+
+
+    id 索引   在索引文件里面记录               
+    1---------&gt;数据的内存地址  
+    2
+    3
+    4
+    5-----------数据的内存地址
+    6
+
+select * from user where id=5;
+
+表的索引文件------&gt;id=785987598 地址()
+</code></pre>
+
+<h3>索引调用</h3>
+
+<p>索引不需要人工调用，只要sql语句在条件部分使用了被索引的字段，mysql会自动调用，自动查找，自动运行</p>
+
+<pre><code>    举例分析有没有用到索引：
+    Id  name  age  sex  phone .....
+
+    Select * from stu;                  没用到
+    Select * from stu where sex = ‘女’;  没用到
+    Select * from stu where id &gt;50;     用到了
+    Select id,sname from stu;           没用到
+</code></pre>
+
+<h3>使用索引的好处</h3>
+
+<ul>
+<li>避免了检索数据时磁盘的 全表扫描，可以节省扫描时间，可以节省记录排队进入内存的和CPU的时间</li>
+<li>对于多表连接和嵌套查询更加有利;<code>select * from stu_info where id in(select s_id from marks_info where marks&gt;60)</code></li>
+<li>对特定的索引列找出<code>MAX()</code>或<code>MIN()</code>值。</li>
+</ul>
+
+<h3>使用索引的缺点</h3>
+
+<ul>
+<li>索引文件占用磁盘空间</li>
+<li>如果建立的索引过多，那么扫描，索引目录文件浪费时间过多;</li>
+<li>虽然索引大大提高了查询速度，同时却会降低更新表的速度，如对表进行INSERT、UPDATE和DELETE，MySQL不仅要保存数据，还要保存一下索引文件。</li>
+</ul>
+
+<h3>什么字段要建立索引</h3>
+
+<p>经常作为条件的字段、或者作为多表链接的关键字段上适合建立索引</p>
+
+<pre><code>    Select
+    sname,mark                              不适合建立索引
+    from stu_info s inner join marks m
+    on s.id = m.s_id                        适合建立索引
+    where
+    s.email=’12306@garb.com’;               适合建立索引（？）
+</code></pre>
+
+<h2>使用索引</h2>
+
+<h3>创建索引</h3>
+
+<p><strong>创建表时，创建索引</strong></p>
+
+<pre><code>create table teacher(
+    id int(5) not null auto_increnment  primary key,
+    name varchar(30) not null,
+    ....,
+    Indextype  indexname(column)
+);
+</code></pre>
+
+<p><strong>表存在时，直接建立索引</strong></p>
+
+<pre><code>create 索引类型  索引名 on 表名(字段);
+eg:
+create index ind_name on stu_info(sname);
+Create unique index ind_name on tbname(column);
+</code></pre>
+
+<p><strong>修改表结构时建立索引</strong></p>
+
+<pre><code>alter table 表名 add indextype 索引名(字段名);
+Eg:     
+alter table stu_info add index sname(sname);
+</code></pre>
+
+<h3>查看索引</h3>
+
+<ul>
+<li><p>desc tbname;</p>
+
+<p>Key字段：  MUL普通  pri主键   uni唯一</p></li>
+<li><p>show index from 表名;//查看表的索引</p></li>
+</ul>
+
+<p><img src="http://i.imgur.com/MVIgxLm.png" alt="" /></p>
+
+<ul>
+<li>Cardinality:索引中唯一值的数目的估计值。通过运行ANALYZE TABLE或myisamchk -a可以更新。基数根据被存储为整数的统计数据来计数，所以即使对于小型表，该值也没有必要是精确的。基数越大，当进行联合时，MySQL使用该索引的机会就越大。</li>
+<li>Sub_part:如果列只是被部分地编入索引，则为被编入索引的字符的数目。如果整列被编入索引，则为NULL。</li>
+<li>Packed:指示关键字如何被压缩。如果没有被压缩，则为NULL。</li>
+<li>Null:如果列含有NULL，则含有YES。如果没有，则该列含有NO</li>
+<li>Index_type:用过的索引方法（BTREE, FULLTEXT, HASH）。</li>
+<li>Comment:注释</li>
+</ul>
+
+<h3>查看索引作用</h3>
+
+<p>比较创建索引前与创建索引后的结果</p>
+
+<pre><code> Select sname,grade from student where grade &gt;=60;
+</code></pre>
+
+<h2>索引的分类</h2>
+
+<h3>根据记录的特点</h3>
+
+<ul>
+<li><p><strong>普通索引：index(常规索引)</strong></p>
+
+<ul>
+<li><p>表中的任何字段都可以建立普通索引（记录可以为null，记录可以重复）</p>
+
+<p><code>Create index 索引名 on 表名(字段名)</code>    </p></li>
+<li><p>常规索引技术是关系型数据查询中最重要的技术，如果要提升数据库的性能，索引优化是首先应该考虑的，因为他能使我们的数据库得到最大性能方面的提升。如果没有索引的数据表，就没有排序的数据集合，要查询数据就需要进行全表扫描。有索引的表是一个在索引列上排序了的数据表，所以可通过索引快速定位记录。</p></li>
+<li>在Myisam数据表中数据行保存在数据文件中，索引保存在索引文件中。但是在Innodb数据表中，数据与索引放在同一个文件中。</li>
+<li>常规索引也存在缺点，例如，占用磁盘空间，而且还会减慢在索引数据列上的插入、删除、修改操作，他们也需要按照索引列上的排序格式执行。</li>
+<li>因此索引应该创建在搜索、排序、分组等操作所涉及的数据列上。也就是在where子句，多表查询中的from子句、order by 或 group by 子句中出现过的数据列最合适用来创建这种索引。但是不要建太多索引，索引会消耗资源。</li>
+</ul></li>
+<li><p><strong>主键索引: 记录不能为空，记录不能重复</strong></p>
+
+<p>主键索引是关系型数据库中最常见的索引类型，主要作用是确定数据表中的一条特定的数据的位置。数据表会根据主键的唯一性来唯一标识每条记录，这样可以加快寻址定位的速度，最好每张表都指定一个主键</p>
+
+<pre><code>create table 表名(id int(5) primary key;
+
+create table test (
+    Id int(5) not null auto_increment,
+    Name varchar(4) not null,
+    Primary key(id)
+);
+</code></pre></li>
+<li><p><strong>唯一索引：unique index</strong></p>
+
+<ul>
+<li>唯一索引的记录可以为空[null]，但是记录不能重复，与主键的不同之处在于每个数据表中只能有一个主键索引，但是可以有多个唯一索引，如果能确定某个数据列将只包含彼此各不相同的值，在为这个数据列创建索引时，就应该使用 unique 把它定义为一个唯一索引</li>
+<li>在有新纪录插入的时候，就会自动检测新纪录的这个字段值，是否已经在某个现有的记录的这个字段里出现过了，如果是，Mysql 将拒绝插入这条记录</li>
+<li><p>其实创建唯一索引的目的往往不是为了提高访问速度，而只是为了避免数据重复。</p>
+
+<pre><code>Create unique index 索引名 on 表名(字段名)
+</code></pre></li>
+</ul></li>
+</ul>
+
+<h3>根据索引的个数</h3>
+
+<p><strong>单列索引,以上讲的都是单列</strong></p>
+
+<p><strong>多列索引</strong></p>
+
+<p>就是索引内容为多个字段，建立一个多列索引就相当于建立多个单列索引,建立两个字段的多列索引就相当于建立了三个索引,在创建索引的时候，尽量创建多列索引。</p>
+
+<ul>
+<li><p>多列普通索引</p>
+
+<pre><code>create index 索引名 on 表（字段1,字段2）
+</code></pre></li>
+<li><p>多列唯一索引</p>
+
+<pre><code>create unique index 索引名 on 表（字段1,字段2）
+</code></pre></li>
+<li><p>多列主键索引（复合主键）</p>
+
+<pre><code>错误  :
+create table news(
+        id int(2) auto_increment primary key,
+        name varchar(20) primary key,
+    );
+
+正确：
+create table 表名(
+            字段1,
+            字段2,
+            ...
+            primary key(字段1，字段2……)
+);
+</code></pre></li>
+</ul>
+
+<h3>根据内容索引</h3>
+
+<p>根据字段的value长度进行建立索引</p>
+
+<ul>
+<li><p>短索引: </p>
+
+<p>建立短索引的字段特点: 字符型varchar或者文本型text的字段,字段的内容前半部分出现重复的情况比较少;</p>
+
+<p>如：河南信阳男子小学门口砍杀24人获死刑，日韩改变态度允许民航向中国通报飞行计划，驻欧盟使团发言人：“法轮功”是反华政治组织，湾强制大陆资本21日内撤出有线电视领域，彭丽媛撰文怀念恩师感谢提携之情 称其为伯乐</p>
+
+<pre><code>title  varchar(120)   
+
+create index 索引名 on 表(字段(20))
+
+create index title on news(title(20))
+</code></pre></li>
+<li><p>单列普通短索引</p>
+
+<pre><code>create  index 名  on 表(字段1(长度))
+</code></pre></li>
+<li><p>单列唯一短索引</p>
+
+<pre><code>create unique index 名  on 表(字段1(长度))
+</code></pre></li>
+<li><p>单列主键短索引</p>
+
+<pre><code>create table aa(
+    id int(11) ,
+    ...
+    primary key(id(3)
+)
+</code></pre></li>
+<li><p>多列普通短索引</p>
+
+<pre><code>create  index 名  on 表(字段1(长度),字段2(长度))
+</code></pre></li>
+<li><p>多列唯一短索引</p>
+
+<pre><code>create unique index 名  on 表(字段1(长度),字段2(长度))
+</code></pre></li>
+<li><p>多列主键短索引</p>
+
+<pre><code>create table news_info (
+    id int (2),
+    title varchar(100),
+    author varchar(50),
+    content varchar(500),
+    primary key(title(20),author(10))
+);
+</code></pre></li>
+<li><p>全文索引  fulltext index</p>
+
+<ul>
+<li>如果查询的字段的部分内容在该内容中出现率>50%或者表中记录&lt;2条的时候，全文索引没用</li>
+<li><p>50%  全文索引也没用</p>
+
+<pre><code>Create  fulltext index 索引名称 on tbname(column);
+</code></pre></li>
+<li><p>innodb引擎中没用</p></li>
+<li><p>MYSQL  默认不开启 全文索引</p>
+
+<pre><code>修改mysql配置文件：window服务器为my.ini，linux服务器为my.cnf，   
+在 [mysqld] 后面加入一行“ft_min_word_len=1”，然后重启Mysql。
+</code></pre></li>
+</ul></li>
+<li><p>全文索引的使用： 不区分大小写</p>
+
+<pre><code>Select xxx from tbname  WHERE MATCH (索引字段) AGAINST (‘关键字’);
+REPAIR TABLE table_name;   重新加载表内存
+
+**Sphinx，dede**
+</code></pre></li>
+</ul>
+
+<h3>删除索引</h3>
+
+<pre><code> drop index 索引名 on 表名
+</code></pre>
+
+<p>索引没有名称怎么删除？</p>
+
+<pre><code>ALTER TABLE table_name DROP PRIMARY KEY
+</code></pre>
+
+<h3>建立索引注意要点</h3>
+
+<ul>
+<li>检索速度:主键-->唯一-->普通--->没有索引 </li>
+<li>索引内容匹配的长度:  能建立短索引尽量的建立短索引</li>
+<li>尽量建立多列索引(但是多列索引不能过多)</li>
+<li>建立的索引(字段)必须是在where后经常频繁出现的字段<br />
+<ol>
+<li>表的主键、外键必须有索引 </li>
+<li>数据量超过300条记录的表应该有索引 </li>
+<li>经常与其他表进行连接的表，在连接字段上应该建立索引（外键）</li>
+<li>经常出现在Where子句中的字段，特别是大表的字段，应该建立索引</li>
+<li>索引应该建在选择性高的字段上</li>
+<li>对于大的文本字段甚至超长字段应该建立全文索引   </li>
+</ol></li>
+</ul>
+
+<h2>视图</h2>
+
+<h3>什么是视图</h3>
+
+<ul>
+<li>视图是从一个或多个表中导出来的表，是一种虚拟存在的表。 </li>
+<li>视图就像一个窗口，通过这个窗口可以看到系统专门提供的数据。</li>
+<li>这样，用户可以不用看到整个数据库中的数据，而只关心对自己有用的数据。</li>
+<li>数据库中只存放了视图的定义，而没有存放视图中的数据，这些数据存放在原来的表中。 </li>
+<li>使用视图查询数据时，数据库系统会从原来的表中取出对应的数据。</li>
+<li>视图中的数据依赖于原来表中的数据，一旦表中数据发生改变，显示在视图中的数据也会发生改变。</li>
+</ul>
+
+<h3>视图的作用</h3>
+
+<ul>
+<li>使操作简单化，可以对经常使用的查询定义一个视图，使用户不必为同样的查询操作指定条件</li>
+<li>增加数据的安全性，通过视图，用户只能查询和修改指定的数据。</li>
+<li>提高表的逻辑独立性，视图可以屏蔽原有表结构变化带来的影响。</li>
+<li>总而言之，使用视图的大部分情况是为了保障数据安全性，提高查询效率</li>
+<li>视图只能做检索功能，检索的方式和其他表没有区别</li>
+<li>视图虽然是虚拟表，但是虚拟表也是表，所以表名不能和其他表重名，视图是依附于数据库存在的</li>
+<li>视图主要是多表查询的结果，存储的数据源于多个表，单表的视图是无任何意义的</li>
+</ul>
+
+<h3>视图的创建</h3>
+
+<pre><code>create view 视图名 as 多表查询的sql语句
+</code></pre>
+
+<p>例：</p>
+
+<pre><code>  create view all_stu_data 
+    as
+  Select s.id,s.sname,s.age,s.addr,c.c_name,m.marks
+    from
+  stu_info s inner join marks_info m on s.id=m.s_id 
+  inner join class_info c on c.id=m.c_id;
+</code></pre>
+
+<p>也可指定存储的字段名</p>
+
+<pre><code>CREATE VIEW work_view(ID,NAME,ADDR) AS SELECT id,name,address FROM work;  
+</code></pre>
+
+<h3>视图的查询</h3>
+
+<p>视图的查询和普通的表没什么区别</p>
+
+<pre><code>Select * from viewname;
+</code></pre>
+
+<h3>修改视图</h3>
+
+<pre><code>alter view 视图名 as 新的sql语句
+</code></pre>
+
+<h3>删除视图</h3>
+
+<pre><code>drop view 视图名
+</code></pre>
+
+<h3>操作视图</h3>
+
+<ul>
+<li><code>alter table   add</code>    失败</li>
+<li><code>Alter table   drop</code>   失败</li>
+<li><p><code>Alter table   modify</code> 失败</p>
+
+<pre><code>Basename.tablename is not a base table
+</code></pre></li>
+<li><p><code>insert into viewname</code>    </p>
+
+<ul>
+<li>单表视图可以插入 （无意义）</li>
+<li><p>多表不能插入</p>
+
+<pre><code>Can not modify more than one base table through a join view 'thinkshop.school'
+</code></pre></li>
+</ul></li>
+<li><p><code>delete from viewname;</code></p>
+
+<ul>
+<li>单表可删除 </li>
+<li>多表视图不能操作</li>
+</ul></li>
+<li><p><code>update viewname set column=’’;</code></p>
+
+<ul>
+<li>对于视图，不管是单表还是多表，都可以执行修改操作（一次只能修改一个字段）</li>
+<li>并且，对于视图的修改会影响原表</li>
+<li>但是，一般不会去对视图进行修改</li>
+</ul></li>
+<li><p><code>select * from viewname;</code></p>
+
+<ul>
+<li>视图的核心功能</li>
+</ul></li>
+</ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

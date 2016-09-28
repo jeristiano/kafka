@@ -1,0 +1,47 @@
+<extend name="Public:base" />
+<block name="content">
+
+    <table  class='table table-hover table-container '>
+        <tr>
+            <td>姓名</td>
+            <td>邮箱</td>
+            <td>手机</td>
+            <td>操作</td>
+        </tr>
+        <volist name='list' id='v'>
+            <tr class='tr_{$v.aid}'>
+                <td class='aname'>{$v.aname}</td>
+                <td class='email'>{$v.email}</td>
+                <td class='cellphone'>{$v.cellphone}</td>
+                <td>
+                    <span data-aid='{$v.aid}' class='btn btn-success btn-sm del'>删除</span>
+                    <span data-aid='{$v.aid}' data-aname='{$v.aname}' data-email='{$v.email}' 
+                          data-cellphone='{$v.cellphone}' class='btn btn-success btn-sm edit'>编辑</span>
+                </td>
+            </tr>
+        </volist>  
+       
+    </table>
+    
+    <form class="form-inline form" style="background:#ebebeb;padding:24px 16px;border-radius:6px">
+        <input type="hidden"  name="aid">
+        <div class="form-group">
+            <label>姓名</label>
+            <input type="text" class="form-control"  name='aname'>
+        </div>
+        <div class="form-group">
+            <label >邮箱</label>
+            <input type="text" class="form-control" name='email'>
+        </div>
+        <div class="form-group">
+            <label >手机</label>
+            <input type="text" class="form-control"  name='cellphone'>
+        </div>
+        <span class="btn btn-success  sub  ">提交</span>
+        <span class="btn btn-success  doedit ">编辑</span>
+    </form>
+    
+
+</block>
+
+

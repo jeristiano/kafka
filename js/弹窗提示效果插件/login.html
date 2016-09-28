@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="shortcut icon" href="favicon.ico"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>{$CONF['mallTitle']}后台管理中心登录</title>
+      <link href="__PUBLIC__/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="__ROOT__/Apps/Admin/View/css/login.css">    
+      <script src="__PUBLIC__/js/jquery.min.js"></script>
+      <script src="__PUBLIC__/plugins/bootstrap/js/bootstrap.min.js"></script>
+      <script src="__PUBLIC__/js/common.js"></script>
+	   <!--插件不能删除-->
+      <script src="__PUBLIC__/plugins/plugins/plugins.js"></script>     
+	  <!--提交文件不能删除-->
+      <script src="__PUBLIC__/js/think.js"></script>
+   </head>
+   <script>
+   $(function(){	   
+	   $('.form-actions').click(function(){
+		 var params = {};
+	  params.loginName = $.trim($('#loginName').val());
+	  params.loginPwd = $.trim($('#loginPwd').val());	 
+	 Plugins.waitTips({title:'信息提示',content:'正在登录，请稍后...'});
+		$.post("__MODULE__/Index/login",params,function(data){	
+				Plugins.setWaitTipsMsg({ content:data,timeout:1000,callback:function(){
+					location.href='http://www.baidu.com';
+				}});		
+		});	   
+	   });	
+	   })
+   
+  
+   </script>
+   <body>
+        <div id="loginbox"> 
+            <div class='logo'></div>            
+            <form id="loginform" class="form-vertical" />
+                <div class="control-group">
+                    <div class="controls"> 
+                        <div class="input-prepend">
+                            <span class="add-on">账号：</span><input type="text" name='loginName' id='loginName' placeholder="用户名" />
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on">密码：</span><input type="password" name='loginPwd' id='loginPwd' placeholder="密码" />
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on">验证码：</span><input type="text" style='width:115px;' name='verfyCode' id='verfyCode' placeholder="验证码" />
+							<button type='button' class='form-actions'>登录等</button>
+							
+                        </div>
+                    </div>
+                </div>
+                <div class=""></div>
+            </form>
+        </div> 
+    </body>
+</html>

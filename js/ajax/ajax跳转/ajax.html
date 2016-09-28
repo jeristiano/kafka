@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax无刷新跳转</title>
+</head>
+<body>
+	<div class='menu'>
+			<div>
+				 <div>
+					<a class='User/listUser'>前台用户</a>
+					<a class='Staff/staffList'>职员管理</a>
+					<a class='Staff/staffAdd'>添加职员</a>                                  					      						     
+                </div>
+			</div>
+	</div>
+	<!-----ajax请求后返回内容显示处------>
+	<div class='contents'></div>
+
+	<script>
+        $(function () {
+            //点击左侧菜单栏在右侧显示内容
+            $(".menu a ").click(function () {
+				//获取当前选择器选中对象的属性值
+                var action = $(this).attr("class");
+                $.get('__MODULE__/' + action, function (res) {
+					//ajax请求回调函数,选中contents属性div对象,显示页面代码
+                    $(".contents").html(res);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
+ 
