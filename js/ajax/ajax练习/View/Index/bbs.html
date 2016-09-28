@@ -1,0 +1,80 @@
+<extend name="Public/base"/>
+
+<block name="content">
+
+    <table class="table table-hover table-striped table2" style="width:1300px;">
+        <tr>
+            <td>姓名</td>
+            <td>邮箱</td>
+            <td>手机</td>
+            <td>操作</td>
+        </tr>
+        <volist name="list" id="v">
+            <tr class="tr_{$v.aid}">
+                <td class="aname">{$v.aname}</td>
+                <td class="email">{$v.email}</td>
+                <td class="cellphone">{$v.cellphone}</td>
+                <td>
+                    <span class="btn btn-success btn-sm del2" data-aid="{$v.aid}">删除</span>
+                    <span class="btn btn-success btn-sm edit2" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2" data-aid="{$v.aid}" data-aname="{$v.aname}" data-email="{$v.email}" data-cellphone="{$v.cellphone}">编辑</span>
+                </td>
+            </tr>
+        </volist>
+    </table> 
+    
+    {//点击出现添加表单,提交后表单消失}    
+    <button class="btn btn-success btn-sm add" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">添加用户</button>
+    
+    <div class="pagination" style="float:right;margin-right:60px;">{$page}</div>
+    <hr/>
+  {//添加}  
+    
+    <div class="collapse" id="collapseExample" style="width:1300px;">
+        <div class="well">
+            <div style="color:gray;font-family:微软雅黑;font-size:20px;">添加</div>
+            <form class="form-inline form" style="padding:24px 16px;border-radius:6px;">
+                <input type="hidden"  name="aid">
+                <div class="form-group">
+                    <label>姓名</label>
+                    <input type="text" class="form-control"  name='aname'>
+                </div>
+                <div class="form-group">
+                    <label >邮箱</label>
+                    <input type="text" class="form-control" name='email'>
+                </div>
+                <div class="form-group">
+                    <label >手机</label>
+                    <input type="text" class="form-control"  name='cellphone'>
+                </div>      
+                <span class="btn btn-success  doUser " data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">确认添加</span>
+            </form>
+        </div>
+    </div>
+    
+   {//编辑} 
+     <div class="collapse" id="collapseExample2" style="width:1300px;">
+         
+        <div class="well">
+            <div style="color:gray;font-family:微软雅黑;font-size:20px;">编辑</div>
+            <form class="form-inline form" style="padding:24px 16px;border-radius:6px;">
+                <input type="hidden"  ename="aid">
+                <div class="form-group">
+                    <label>姓名</label>
+                    <input type="text" class="form-control"  ename='aname'>
+                </div>
+                <div class="form-group">
+                    <label >邮箱</label>
+                    <input type="text" class="form-control" ename='email'>
+                </div>
+                <div class="form-group">
+                    <label >手机</label>
+                    <input type="text" class="form-control"  ename='cellphone'>
+                </div>      
+                <span class="btn btn-success  editUser2 " data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">编辑</span>
+            </form>
+        </div>
+    </div>
+
+
+</block>
+

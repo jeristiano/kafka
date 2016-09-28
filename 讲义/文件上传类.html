@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>upload</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: "΢���ź�"��Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>文件上传</h1>
+
+<h2>上传表单</h2>
+
+<p>在ThinkPHP中使用上传功能无需进行特别处理。例如，下面是一个带有附件上传的表单提交：</p>
+
+<pre><code>&lt;form action="__URL__/upload" enctype="multipart/form-data" method="post" &gt;
+    &lt;input type="text" name="name" /&gt;
+    &lt;input type="file" name="photo" /&gt;
+    &lt;input type="submit" value="提交" &gt;
+&lt;/form&gt;
+</code></pre>
+
+<p><strong>注意:</strong>要使用上传功能 你的表单需要设置 enctype="multipart/form-data"
+多文件上传支持</p>
+
+<p>如果需要使用多个文件上传，只需要修改表单，把</p>
+
+<pre><code>&lt;input type='file'  name='photo'&gt;
+</code></pre>
+
+<p>改为</p>
+
+<pre><code>&lt;input type='file'  name='photo1'&gt;
+&lt;input type='file'  name='photo2'&gt;
+&lt;input type='file'  name='photo3'&gt;
+</code></pre>
+
+<p>或者</p>
+
+<pre><code>&lt;input type='file'  name='photo[]'&gt;
+&lt;input type='file'  name='photo[]'&gt;
+&lt;input type='file'  name='photo[]'&gt;
+</code></pre>
+
+<p>两种方式的多附件上传系统的文件上传类都可以自动识别。</p>
+
+<h2>上传操作</h2>
+
+<p>上传操作使用Upload类，假设前面的表单提交到当前控制器的upload方法，我们来看下upload方法的实现代码：</p>
+
+<pre><code>public function upload(){
+    $upload = new Upload();// 实例化上传类
+    $upload-&gt;maxSize   =     3145728 ;// 设置附件上传大小
+    $upload-&gt;exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+    $upload-&gt;rootPath  =     './Uploads/'; // 设置附件上传根目录
+    $upload-&gt;savePath  =     ''; // 设置附件上传（子）目录
+    // 上传文件 
+    $info   =   $upload-&gt;upload();
+    if(!$info) {// 上传错误提示错误信息
+        echo ($upload-&gt;getError());
+    }else{// 上传成功
+        echo ('上传成功！');
+    }
+}
+</code></pre>
+
+<p>上传类对图片文件的上传安全做了支持，如果企图上传非法的图像文件，系统会提示 非法图像文件。 为了更好的使用上传功能，建议你的服务器开启finfo模块支持</p>
+
+<p><strong>上传参数</strong></p>
+
+<p>在上传操作之前，我们可以对上传的属性进行一些设置，Upload类支持的属性设置包括：</p>
+
+<pre><code>属性          描述
+maxSize     文件上传的最大文件大小（以字节为单位），0为不限大小
+rootPath    文件上传保存的根路径
+savePath    文件上传的保存路径（相对于根路径）
+saveName    上传文件的保存规则，支持数组和字符串方式定义
+saveExt     上传文件的保存后缀，不设置的话使用原文件后缀
+replace     存在同名文件是否是覆盖，默认为false
+exts        允许上传的文件后缀（留空为不限制），使用数组或者逗号分隔的字符串设置，默认为空
+mimes       允许上传的文件类型（留空为不限制），使用数组或者逗号分隔的字符串设置，默认为空
+autoSub     自动使用子目录保存上传文件 默认为true
+subName     子目录创建方式，采用数组或者字符串方式定义
+hash        是否生成文件的hash编码 默认为true
+callback    检测文件是否存在回调，如果存在返回文件信息数组
+</code></pre>
+
+<p>上面的属性可以通过两种方式传入：</p>
+
+<h2>实例化传入</h2>
+
+<p>我们可以在实例化的时候直接传入参数数组，例如：</p>
+
+<pre><code>$config = array(
+    'maxSize'    =&gt;    3145728,
+    'rootPath'   =&gt;    './Uploads/',
+    'savePath'   =&gt;    '',
+    'saveName'   =&gt;    array('uniqid',''),
+    'exts'       =&gt;    array('jpg', 'gif', 'png', 'jpeg'),
+    'autoSub'    =&gt;    true,
+    'subName'    =&gt;    array('date','Ymd'),
+);
+
+$upload = new Upload($config);// 实例化上传类
+</code></pre>
+
+<p>关于saveName和subName的使用后面我们会有详细的描述。</p>
+
+<h2>动态赋值</h2>
+
+<p>支持在实例化后动态赋值上传参数，例如：</p>
+
+<pre><code>$upload = new Upload();// 实例化上传类
+$upload-&gt;maxSize = 3145728;
+$upload-&gt;rootPath = './Uploads/';
+$upload-&gt;savePath = '';
+$upload-&gt;saveName = array('uniqid','');
+$upload-&gt;exts     = array('jpg', 'gif', 'png', 'jpeg');
+$upload-&gt;autoSub  = true;
+$upload-&gt;subName  = array('date','Ymd');
+</code></pre>
+
+<p>上面的设置和实例化传入的效果是一致的。</p>
+
+<h2>上传文件信息</h2>
+
+<p>设置好上传的参数后，就可以调用Upload类的upload方法进行附件上传，如果失败，返回false，并且用getError方法获取错误提示信息；如果上传成功，就返回成功上传的文件信息数组。</p>
+
+<pre><code>$upload = new Upload();// 实例化上传类
+$upload-&gt;maxSize   =     3145728 ;// 设置附件上传大小
+$upload-&gt;exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+$upload-&gt;rootPath  =      './Uploads/'; // 设置附件上传根目录
+$upload-&gt;savePath  =      ''; // 设置附件上传（子）目录
+// 上传文件 
+$info   =   $upload-&gt;upload();
+if(!$info) {// 上传错误提示错误信息
+    echo ($upload-&gt;getError());
+}else{// 上传成功 获取上传文件信息
+    foreach($info as $file){
+        echo $file['savepath'].$file['savename'];
+    }
+}
+</code></pre>
+
+<p>每个文件信息又是一个记录了下面信息的数组，包括：</p>
+
+<pre><code>属性          描述
+key         附件上传的表单名称
+savepath    上传文件的保存路径
+name        上传文件的原始名称
+savename    上传文件的保存名称
+size        上传文件的大小
+type        上传文件的MIME类型
+ext         上传文件的后缀类型
+md5         上传文件的md5哈希验证字符串 仅当hash设置开启后有效
+sha1        上传文件的sha1哈希验证字符串 仅当hash设置开启后有效
+</code></pre>
+
+<p>文件上传成功后，就可以使用这些文件信息来进行其他的数据操作，例如保存到当前数据表或者单独的附件数据表。
+例如，下面表示把上传信息保存到数据表的字段：</p>
+
+<pre><code>$model = M('Photo');
+// 取得成功上传的文件信息
+$info = $upload-&gt;upload();
+// 保存当前数据对象
+$model-&gt;add($data);
+</code></pre>
+
+<h2>单文件上传</h2>
+
+<p>upload方法支持多文件上传，有时候，我们只需要上传一个文件，就可以使用Upload类提供的uploadOne方法上传单个文件，例如：</p>
+
+<pre><code>public function upload(){
+    $upload = new Upload();// 实例化上传类
+    $upload-&gt;maxSize   =     3145728 ;// 设置附件上传大小
+    $upload-&gt;exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+    $upload-&gt;rootPath  =      './Uploads/'; // 设置附件上传根目录
+    // 上传单个文件 
+    $info   =   $upload-&gt;uploadOne($_FILES['photo1']);
+    if(!$info) {// 上传错误提示错误信息
+        echo ($upload-&gt;getError());
+    }else{// 上传成功 获取上传文件信息
+         echo $info['savepath'].$info['savename'];
+    }
+}
+</code></pre>
+
+<p>uploadOne方法上传成功后返回的文件信息和upload方法的区别是只有单个文件信息的一维数组。</p>
+
+<h2>上传文件的命名规则</h2>
+
+<p>上传文件的命名规则（saveName）用于确保文件不会产生冲突或者覆盖的情况。命名规则的定义可以根据你的业务逻辑来调整，不是固定的。例如，如果你采用时间戳的方式来定义命名规范，那么在同时上传多个文件的时候可能产生冲突（因为同一秒内可以上传多个文件），因此你需要根据你的业务需求来设置合适的上传命名规则。这里顺便来说下saveName参数的具体用法。</p>
+
+<ol>
+<li><p>采用函数方式
+如果传入的字符串是一个函数名，那么表示采用函数动态生成上传文件名（不包括文件后缀），例如：</p>
+
+<pre><code>// 采用时间戳命名
+$upload-&gt;saveName = 'time';
+// 采用GUID序列命名
+$upload-&gt;saveName = 'com_create_guid'; 
+也可以采用用户自定义函数
+// 采用自定义函数命名
+$upload-&gt;saveName = 'myfun'; 
+</code></pre></li>
+</ol>
+
+<p>默认的命名规则设置是采用uniqid函数生成一个唯一的字符串序列。
+saveName的值支持数组和字符串两种方式，如果是只有一个参数或者没有参数的函数，直接使用字符串设置即可，如果需要传入额外的参数，可以使用数组方式，例如：</p>
+
+<pre><code>    // 采用date函数生成命名规则 传入Y-m-d参数
+    $upload-&gt;saveName = array('date','Y-m-d'); 
+    // 如果有多个参数需要传入的话 可以使用数组
+    $upload-&gt;saveName = array('myFun',array('__FILE__','val1','val2'));
+
+如果需要使用上传的原始文件名，可以采用__FILE__传入，所以上面的定义规则，最终的结果是 myFun('上传文件名','val1','val2')执行的结果。
+</code></pre>
+
+<ol>
+<li><p>直接设置上传文件名</p>
+
+<p>如果传入的参数不是一个函数名，那么就会直接当做是上传文件名，例如：</p>
+
+<pre><code>$upload-&gt;saveName = time().'_'.mt_rand();
+</code></pre>
+
+<p>表示上传的文件命名采用时间戳加一个随机数的组合字符串方式。
+当然，如果觉得有必要，你还可以固定设置一个上传文件的命名规则，用于固定保存某个上传文件。</p>
+
+<pre><code>$upload-&gt;saveName = 'ThinkPHP';
+</code></pre></li>
+<li><p>保持上传文件名不变</p>
+
+<p>如果你想保持上传的文件名不变，那么只需要设置命名规范为空即可，例如：</p>
+
+<pre><code>$upload-&gt;saveName = '';
+一般来说不建议保持不变，因为会导致相同的文件名上传后被覆盖的情况。
+子目录保存
+saveName只是用于设置文件的保存规则，不涉及到目录，如果希望对上传的文件分子目录保存，可以设置autoSub和subName参数来完成，例如：
+// 开启子目录保存 并以日期（格式为Ymd）为子目录
+$upload-&gt;autoSub = true;
+$upload-&gt;subName = array('date','Ymd');
+可以使用自定义函数来保存，例如：
+// 开启子目录保存 并调用自定义函数get_user_id生成子目录
+$upload-&gt;autoSub = true;
+$upload-&gt;subName = 'get_user_id';
+和saveName参数一样，subName的定义可以采用数组和字符串的方式。
+</code></pre>
+
+<p><strong>注意：</strong>如果get<em>user</em>id函数未定义的话，会直接以get<em>user</em>id字符串作为子目录的名称保存。</p>
+
+<p>子目录保存和文件命名规则可以结合使用。</p></li>
+</ol>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
