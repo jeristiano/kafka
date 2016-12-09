@@ -1,0 +1,13 @@
+<style>
+.popup { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: fixed; top: 50%; left: 50%; width: 200px; margin-left: -100px; height: 60px; margin-top: -30px; background-color: rgba(0, 0, 0, 0.8); line-height: 60px; text-align: center; color: #FFFFFF; }
+
+</style>
+
+<script>
+	function popup(msg) {
+		var tpl = $('<div class="popup">' + msg + '</div>').appendTo(document.body);
+		var timer = setTimeout(function(){
+			tpl.remove();
+		}, 3000);
+	}
+</script>
