@@ -1,25 +1,14 @@
-##kafka's depression 
+##kafka 
 ------
 
-> here are my collections,all my purposes just wanna use github fluently,a demo for myself 
+###介绍
+> 该库是平时工作学习过程中搜集的一些程序,均是一些基础知识,分为包括:
+- Javascript
+ - 弹窗
+ - ajax
+ - 图片上传uplodify
+ - 倒计时插件 
+- PDO
+- 验证码类
+- 水印类
 
-```
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <title>Page title</title>
-  <!-- External CSS -->
-  <link rel="stylesheet" href="code-guide.css">
-  <!-- In-document CSS -->
-  <style> /* ... */ </style>
-  <!-- JavaScript -->
-  <script src="code-guide.js"></script>
-</head>
-<body>
-  <img src="images/company-logo.png" alt="Company">
-  <h1 class="hello-world">Hello, world!</h1>
-</body>
-</html>
-```
